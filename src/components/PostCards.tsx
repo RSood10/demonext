@@ -1,26 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PostCards(props: any) {
+  // console.log(props.card);
   return (
-    <div className="bg-slate-400 m-4 rounded">
-      <h1 className="p-6 font-semibold text-lg">{props.title}</h1>
-      <p className="p-6">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vero
-        necessitatibus, facilis asperiores enim voluptatibus, suscipit qui, eum
-        consequuntur voluptatem delectus nisi odit id dolor facere architecto
-        debitis quam quisquam. Nam eveniet porro sapiente eius quidem provident
-        excepturi, laboriosam magni, sint molestias voluptatibus officiis libero
-        recusandae! Provident, ex rerum? Natus!
-      </p>
-      <Link href="blog/singleblog" className="p-6 text-blue-600 underline">
+    <div className="bg-slate-400 m-4 rounded ">
+      <div className=" h-4/5">
+        <Image src="/demoimg.jpg" alt="Image" width={500} height={700} />
+      </div>
+      <h1 className="p-6 font-semibold text-lg">{props.card.title}</h1>
+      {/* <p className="p-6">{props.card.body}</p> */}
+      <Link
+        href={`blog/${props.card.id}`}
+        className="p-6 text-blue-600 underline"
+      >
         Read More
       </Link>
     </div>
   );
 }
-// async function getImage() {
-//   const data = await fetch("https://picsum.photos/v2/list?page=2&limit=1");
-//   const res = await data.json();
-//   // console.log(res);
-//   return res;
-// }
