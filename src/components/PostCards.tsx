@@ -1,11 +1,6 @@
 import Link from "next/link";
 
 export default function PostCards(props: any) {
-  //   const getImage = async () => {
-  //     const data = await fetch("https://picsum.photos/v2/list?page=2&limit=1");
-  //     const res = await data.json();
-  //     console.log(res);
-  //   };
   return (
     <div className="bg-slate-400 m-4 rounded">
       <h1 className="p-6 font-semibold text-lg">{props.title}</h1>
@@ -23,3 +18,9 @@ export default function PostCards(props: any) {
     </div>
   );
 }
+// async function getImage() {
+//   const data = await fetch("https://picsum.photos/v2/list?page=2&limit=1");
+//   const res = await data.json();
+//   // console.log(res);
+//   return res;
+// }
